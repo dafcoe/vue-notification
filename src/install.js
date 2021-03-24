@@ -1,12 +1,15 @@
-import VueSwappableCard from './components/VueSwappableCard'
+import VueNotificationList from './components/VueNotificationList'
+import VueNotificationListItem from './components/VueNotificationListItem'
 
 const install = (Vue) => {
-  Vue.component('vue-swappable-card', VueSwappableCard)
+  Vue.component('vue-notification-list', VueNotificationList)
+  Vue.component('vue-notification-list-item', VueNotificationListItem)
 }
 
 export default install
 export {
-  VueSwappableCard,
+  VueNotificationList,
+  VueNotificationListItem,
 }
 
 // Install by default if included from script tag

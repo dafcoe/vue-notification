@@ -1,83 +1,79 @@
-![@dafcoe/vue-swappable-card sample](https://github.com/dafcoe/vue-swappable-card/blob/main/src/assets/images/sample.gif?raw=true)
+![@dafcoe/vue-notification sample](https://github.com/dafcoe/vue-notification/blob/main/src/assets/images/sample.gif?raw=true)
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-swappable-card)
-![npm](https://img.shields.io/npm/dt/@dafcoe/vue-swappable-card?style=flat-square)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-swappable-card?style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-notification?style=flat-square)
+![npm](https://img.shields.io/npm/dt/@dafcoe/vue-notification?style=flat-square)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-notification?style=flat-square)
 
-# @dafcoe/vue-swappable-card
-Easy to use, customisable swappable card library built using Vue3.
+# @dafcoe/vue-notification
+Easy to use, customisable notification/toast library built using Vue3.
+<br>
+See it action on [demo](https://dafcoe.github.io/vue-notification) page.
+
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
 ```
-$ yarn add @dafcoe/vue-swappable-card
+$ yarn add @dafcoe/vue-notification
 
 --- or ---
 
-$ npm install --save @dafcoe/vue-swappable-card
+$ npm install --save @dafcoe/vue-notification
 ```
 
 ## Usage
-Import `VueSwappableCard` component, either globally (on your main.js / main.ts file) or locally (on your component):
+Import `VueNotificationList` component, either globally (on your main.js / main.ts file) or locally (on your component):
 ```js
 // Globally
-import VueSwappableCard from '@dafcoe/vue-swappable-card'
+import VueNotificationList from '@dafcoe/vue-notification'
 const app = createApp(App)
-app.use(VueSwappableCard).mount('#app')
+app.use(VueNotificationList).mount('#app')
 
 // Locally
-import {
-  VueSwappableCard,
-} from '@dafcoe/vue-swappable-card'
+import { VueNotificationList } from '@dafcoe/vue-notification'
 ```
 
 Import default styles (optional - you can define your own styling):
 ```js
-import '@dafcoe/vue-swappable-card/dist/vue-swappable-card.css'
+import '@dafcoe/vue-notification/dist/vue-notification.css'
 ```
 
 Use it in the template as follows:
 ```html
-<vue-swappable-card>
-    <template #content-primary>
-        <h1>Face A</h1>
-        <div>
-            <p>Lorem ipsum dolor sit amet...</p>
-        </div>
-    </template>
-    <template #content-secondary>
-        <h1>Face B</h1>
-        <div>
-            <p>Lorem ipsum dolor sit amet...</p>
-        </div>
-    </template>
-</vue-swappable-card>
+<vue-notification-list></vue-notification-list>
 ```
 
 ## Options
-#### Direction
-By default, the swap direction is from bottom to top. You can use "from-top", "from-bottom", "from-left" or "from-right" on `direction` prop:
+#### Position
+By default, the notification list is displayed on bottom right corner of the screen. You can customize this using "top-left", "top-right", "bottom-left" or "bottom-right" on `position` prop:
 ```html
-<vue-swappable-card direction="from-top|from-bottom|from-left|from-right">
-    ...
-</vue-wappable-card>
+<vue-notification-list position="top-left|top-right|bottom-left|bottom-right"></vue-notification-list>
 ```
 
-#### Event
-By default, the card swaps when overing it. You can use "over" or "click" on `event` prop:
-```html
-<vue-swappable-card direction="over|click">
-    ...
-</vue-wappable-card>
+## Pushing Notifications
+To push a notification, you have call `setNotification` from `vue-notification.store`, passing a notification object:
+```javascript
+import { useNotificationStore } from '@dafcoe/vue-notification/vue-notification.store'
+...
+const { setNotification } = useNotificationStore()
+setNotification(notificationA)
+setNotification(notificationB)
 ```
-
-#### Swapped
-By default, the primary content / front face is shown as main content/face. You can change this using `swapped` prop:
-```html
-<vue-swappable-card swapped>
-    ...
-</vue-wappable-card>
+A notification object has the following properties:
+```json
+{
+  "message": string,
+  "type": string ("info"|"warning"|"alert"|"success"),
+  "showIcon": boolean,
+  "dismiss": {
+    "manually": boolean,
+    "automatically": boolean
+  },
+  "duration": number,
+  "showDurationProgress": boolean,
+  "appearance": string ("light"|"dark"|"glass")
+}
 ```
+Please check the [demo](https://dafcoe.github.io/vue-notification) page to easily see all propreties in action.
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT) © [Daf Coe](mailto:dafcoe@gmail.com)
