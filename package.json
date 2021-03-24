@@ -1,15 +1,42 @@
 {
-  "name": "vue-swappable-card",
+  "name": "@dafcoe/vue-swappable-card",
   "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+  "description": "Swappable Card Component Using Vue3",
+  "keywords": [
+    "swappable card",
+    "swappable",
+    "card",
+    "vue",
+    "vue3",
+    "javascript",
+    "typescript"
+  ],
+  "homepage": "https://github.com/dafcoe/vue-swappable-card",
+  "bugs": {
+    "url": "https://github.com/dafcoe/vue-swappable-card/issues",
+    "email": "dafcoe+vsc@gmail.com"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+  "license": "MIT",
+  "author": {
+    "name": "Daf Coe",
+    "email": "dafcoe@gmail.com"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "main": "dist/vue-swappable-card.common.js",
+  "module": "dist/vue-swappable-card.common.js",
+  "unpkg": "dist/vue-swappable-card.umd.min.js",
+  "css": "dist/vue-swappable-card.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dafcoe/vue-swappable-card"
+  },
+  "scripts": {
+    "build:dev": "vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:lib": "rm -rf dist && vue-cli-service build --target lib --name vue-swappable-card ./src/install.js && rm dist/demo.html",
+    "lint": "vue-cli-service lint"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
@@ -21,6 +48,7 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "core-js": "^3.6.5",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
@@ -29,6 +57,9 @@
     "eslint-plugin-vue": "^7.0.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
-  }
+    "typescript": "~4.1.5",
+    "vue": "^3.0.0"
+  },
+  "private": false
 }
+
