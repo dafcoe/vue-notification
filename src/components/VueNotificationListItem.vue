@@ -203,6 +203,8 @@ export default defineComponent({
     }
 
     &--right {
+      text-align: left;
+
       #{$root}__icon {
         right: -24px;
         transform: rotate(-12deg);
