@@ -52,7 +52,7 @@ By default, the notification list is displayed on bottom right corner of the scr
 ## Pushing Notifications
 To push a notification, you have call `setNotification` from `vue-notification.store`, passing a notification object:
 ```javascript
-import { useNotificationStore } from '@dafcoe/vue-notification/vue-notification.store'
+import { useNotificationStore } from '@dafcoe/vue-notification'
 ...
 const { setNotification } = useNotificationStore()
 setNotification(notificationA)
