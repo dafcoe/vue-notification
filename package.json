@@ -1,6 +1,6 @@
 {
   "name": "@dafcoe/vue-notification",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Notification/Toast Component Using Vue3",
   "keywords": [
     "notification",
