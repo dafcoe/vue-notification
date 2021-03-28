@@ -1,5 +1,6 @@
 import VueNotificationList from './components/VueNotificationList'
 import VueNotificationListItem from './components/VueNotificationListItem'
+import { useNotificationStore } from './components/vue-notification.store'
 
 const install = (Vue) => {
   Vue.component('vue-notification-list', VueNotificationList)
@@ -10,6 +11,7 @@ export default install
 export {
   VueNotificationList,
   VueNotificationListItem,
+  useNotificationStore,
 }
 
 // Install by default if included from script tag
