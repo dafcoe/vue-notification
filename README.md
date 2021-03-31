@@ -1,4 +1,4 @@
-![@dafcoe/vue-notification sample](https://github.com/dafcoe/vue-notification/blob/main/src/assets/images/sample.gif?raw=true)
+[![@dafcoe/vue-notification sample](https://github.com/dafcoe/vue-notification/blob/main/src/assets/images/sample.gif?raw=true)](https://dafcoe.github.io/vue-notification)
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-notification?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/@dafcoe/vue-notification?style=flat-square)
