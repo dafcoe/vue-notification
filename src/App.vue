@@ -386,6 +386,7 @@ export default defineComponent({
       border-radius: 5px;
       color: white;
       outline: none;
+      max-width: 170px;
     }
 
     input[type=radio],

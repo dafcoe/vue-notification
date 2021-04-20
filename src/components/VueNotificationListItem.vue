@@ -10,7 +10,7 @@
       class="notification-list-item__tag"
     />
     <div class="notification-list-item__message">
-      <slot>{{ notification.message }}</slot>
+      <span v-html="notification.message" />
     </div>
     <div class="notification-list-item__icon">
       <span
