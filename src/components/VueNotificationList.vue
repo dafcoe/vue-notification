@@ -85,7 +85,7 @@ export default defineComponent({
 
   .notification-list {
     position: fixed;
-    z-index: 100;
+    z-index: 10000;
     margin: 0;
     padding: 0;
 
