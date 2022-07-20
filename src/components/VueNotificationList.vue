@@ -4,7 +4,7 @@
     name="notification-list"
     tag="ul"
     appear
-    class="notification-list fixed z-40"
+    class="notification-list fixed"
   >
     <vue-notification-list-item
       v-for="notification in notificationList"
@@ -38,6 +38,10 @@ export default defineComponent({
       type: String as PropType<NotificationListPosition>,
       default: NotificationListPosition.BottomRight,
     },
+    zIndex:{
+      type: String,
+      default:'z-40'
+    }
   },
   setup(props) {
     const { notifications } = useNotificationStore()
@@ -59,7 +63,7 @@ export default defineComponent({
         : NotificationListPosition.BottomRight,
     )
 
-    const classList = computed(() => `notification-list--${notificationListPosition.value}`)
+    const classList = computed(() => `notification-list--${notificationListPosition.value} ${props.zIndex}`)
 
     const notificationListItemLayout = computed(
       () => notificationListPosition.value.includes(NotificationListItemLayout.Left)
