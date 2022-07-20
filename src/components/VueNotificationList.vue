@@ -63,7 +63,7 @@ export default defineComponent({
         : NotificationListPosition.BottomRight,
     )
 
-    const classList = computed(() => `notification-list--${notificationListPosition.value} ${props.zIndex}`)
+    const classList = computed(() => `notification-list--${notificationListPosition.value} z-${props.zIndex}`)
 
     const notificationListItemLayout = computed(
       () => notificationListPosition.value.includes(NotificationListItemLayout.Left)
